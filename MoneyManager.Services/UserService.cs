@@ -1,6 +1,7 @@
 ﻿using MoneyManager.Data;
 using MoneyManager.Data.Entities;
 using MoneyManager.Models;
+using MoneyManager.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,6 +60,28 @@ namespace MoneyManager.Services
                         );
 
                 return query.ToArray();
+            }
+        }
+        public UserDetail GetUserByAcctNum(int acctNum)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Users
+                        .Single(e => e.UserAcctNumber == acctNum && e.UserID == _userId);
+                return
+                    new UserDetail
+                    {
+                        UserAcctNumber = entity.UserAcctNumber,
+                        Name = entity.Name,
+                        PhoneNumber = entity.PhoneNumber,
+                        Address = entity.Address,
+                        GoalAmount = entity.GoalAmount,
+                        LiquidNetWorth = entity.LiquidNetWorth
+
+
+                    };
             }
         }
     }

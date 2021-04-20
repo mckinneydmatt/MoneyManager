@@ -37,7 +37,12 @@ namespace MoneyManager.Controllers
 
             return Ok();
         }
-
+        public IHttpActionResult Get(int acctNum)
+        {
+            UserService userService = CreateUserService();
+            var user = userService.GetUserByAcctNum(acctNum);
+            return Ok(user);
+        }
 
     }
 }
