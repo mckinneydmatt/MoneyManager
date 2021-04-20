@@ -5,14 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoneyManager.Data.Entities
+namespace MoneyManager.Models
 {
-    public class User
+    public class UserCreate
     {
-        [Key]
-        public int UserAcctNumber { get; set; }
-        [Required]
-        public Guid UserID { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
