@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoneyManager.Data\MoneyManager.Data.csproj">
+      <Project>{4725bbc8-ad52-48d9-a819-4051d2b480e2}</Project>
+      <Name>MoneyManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoneyManager.Models\MoneyManager.Models.csproj">
+      <Project>{b358eee3-293e-4a2f-b4a2-8cc42bab4061}</Project>
+      <Name>MoneyManager.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
