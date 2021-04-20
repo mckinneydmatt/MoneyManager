@@ -67,7 +67,7 @@
       <Name>MoneyManager.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\MoneyManager.Models\MoneyManager.Models.csproj">
-      <Project>{b358eee3-293e-4a2f-b4a2-8cc42bab4061}</Project>
+      <Project>{B358EEE3-293E-4A2F-B4A2-8CC42BAB4061}</Project>
       <Name>MoneyManager.Models</Name>
     </ProjectReference>
   </ItemGroup>
