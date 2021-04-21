@@ -1,5 +1,8 @@
-﻿using MoneyManager.Data.Entities;
+﻿using Microsoft.AspNet.Identity;
+using MoneyManager.Data.Entities;
 using MoneyManager.Models;
+using MoneyManager.Models.RetirementAcct;
+using MoneyManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,27 +13,34 @@ using System.Web.Http;
 
 namespace MoneyManager.Controllers
 {
+    [Authorize]
     public class RetirementController : ApiController
     {
-        private readonly MoneyManagerDbContext _context = new MoneyManagerDbContext();
-        [HttpPost]
 
-        public async Task<IHttpActionResult> CreateRetirementAccount([FromBody] RetirementAcct model)
+        private RetirementService CreateRetirement()
         {
-            if (model is null)
-                return BadRequest("Your request body cannot be empty");
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var retirementService = new RetirementService(userId);
+            return retirementService;
+        }
 
+       public IHttpActionResult Post(RetireCreate retire)
+        {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var retireEntity = await _context.Users.FindAsync(model.UserAcctNumber);
-            if (retireEntity is null)
-                return BadRequest($"The target game with the ID of {model.UserAcctNumber} does not exist.");
+            var service = CreateRetirement();
 
-            retireEntity.RetirementAcct.Add(model);
-            if (await _context.SaveChangesAsync() == 1)
-                return Ok();
-            return InternalServerError();
+            if (!service.CreateRetirement(retire))
+                return InternalServerError();
+
+            return Ok();
         }
+
+        //public IHttpActionResult Get()
+        //{
+        //    RetirementService retirementService = CreateRetirement();
+        //    var retire = retirementService.
+        //}
     }
 }
