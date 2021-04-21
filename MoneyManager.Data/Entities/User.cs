@@ -9,6 +9,7 @@ namespace MoneyManager.Data.Entities
 {
     public class User
     {
+
         [Key]
         public int UserAcctNumber { get; set; }
         [Required]
@@ -23,3 +24,4 @@ namespace MoneyManager.Data.Entities
         public double LiquidNetWorth { get; set; }
     }
 }
+
