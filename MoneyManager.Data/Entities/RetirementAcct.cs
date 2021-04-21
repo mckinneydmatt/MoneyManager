@@ -13,7 +13,10 @@ namespace MoneyManager.Data.Entities
         [Key]
         public int AccountId { get; set; }
 
-        [ForeignKey(nameof(UserAcctNumber))]
+        [Required]
+        public Guid UserID { get; set; }
+
+        [ForeignKey(nameof(User))]
         public int UserAcctNumber { get; set; }
 
         public virtual User User { get; set; }
