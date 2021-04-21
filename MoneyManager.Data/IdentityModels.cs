@@ -34,11 +34,14 @@ namespace MoneyManager.Data
         {
             return new ApplicationDbContext();
         }
-       // public DbSet<User> Users { get; set; } //<--- Add this
+
+        public DbSet<User> Users { get; set; } //<--- Add this
        // public DbSet<CheckingAcct> CheckingAccts { get; set; } //<--- Add this
         public DbSet<SavingsAcct> SavingsAccts { get; set; } //<--- Add this
        // public DbSet<RetirementAcct> RetirementAccts { get; set; } //<--- Add this
        // public DbSet<Expense> Expenses { get; set; } //<--- Add this
+
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
