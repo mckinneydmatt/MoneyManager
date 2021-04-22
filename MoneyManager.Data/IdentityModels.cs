@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using MoneyManager.Data.Entities;
 
+
 namespace MoneyManager.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -33,11 +34,16 @@ namespace MoneyManager.Data
         {
             return new ApplicationDbContext();
         }
+
+
         public DbSet<User> Users { get; set; } //<--- Add this
-        //public DbSet<CheckingAcct> CheckingAccts { get; set; } //<--- Add this
-        //public DbSet<SavingsAcct> SavingsAccts { get; set; } //<--- Add this
-        //public DbSet<RetirementAcct> RetirementAccts { get; set; } //<--- Add this
-        //public DbSet<Expense> Expenses { get; set; } //<--- Add this
+       // public DbSet<CheckingAcct> CheckingAccts { get; set; } //<--- Add this
+        public DbSet<SavingsAcct> SavingsAccts { get; set; } //<--- Add this
+        public DbSet<RetirementAcct> RetirementAccts { get; set; } //<--- Add this
+       // public DbSet<Expense> Expenses { get; set; } //<--- Add this
+
+
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
