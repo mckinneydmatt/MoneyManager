@@ -14,14 +14,19 @@ namespace MoneyManager.Data.Entities
         [Key]
         public int AccountId { get; set; }
 
-
         [ForeignKey(nameof(User))]
-        public int UserAccountNumber { get; set; }
+        [Display(Name = "Checking Account Number")]
+        public int UserAcctNumber { get; set; }
 
-        public virtual User Users { get; set; }
+        public virtual User User { get; set; }
 
+        [Display(Name = "Checking Account Name")]
         public string CkAcctName { get; set; }
 
         public decimal CkAcctBalance { get; set; }
+
+        
+
+
     }
 }

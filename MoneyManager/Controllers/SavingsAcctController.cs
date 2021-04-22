@@ -67,8 +67,8 @@ namespace MoneyManager.Controllers
         private SavingsAcctService CreateSavingsAcctService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var categoryService = new SavingsAcctService(userId);
-            return categoryService;
+            var savingsAcctService = new SavingsAcctService(userId);
+            return savingsAcctService;
         }
     }
 }

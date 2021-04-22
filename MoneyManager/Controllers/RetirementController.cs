@@ -37,10 +37,11 @@ namespace MoneyManager.Controllers
             return Ok();
         }
 
-        //public IHttpActionResult Get()
-        //{
-        //    RetirementService retirementService = CreateRetirement();
-        //    var retire = retirementService.
-        //}
+        public IHttpActionResult Get()
+        {
+            RetirementService retirementService = CreateRetirement();
+            var retire = retirementService.GetRetirementAcct();
+            return Ok(retire);
+        }
     }
 }

@@ -23,12 +23,13 @@ namespace MoneyManager.Services
             var entity =
                 new User()
                 {
-                    UserID = _userId,
+                    UserId = _userId,
+                    UserAcctNumber = model.UserAcctNumber,
                     Name = model.Name,
                     PhoneNumber = model.PhoneNumber,
                     Address = model.Address,
-                    GoalAmount = model.GoalAmount,
-                    LiquidNetWorth = model.LiquidNetWorth,
+                    GoalAmount = model.GoalAmount
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,7 +45,7 @@ namespace MoneyManager.Services
                 var query =
                     ctx
                         .Users
-                        .Where(e => e.UserID == _userId)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new UserList
@@ -54,7 +55,7 @@ namespace MoneyManager.Services
                                     PhoneNumber = e.PhoneNumber,
                                     Address = e.Address,
                                     GoalAmount = e.GoalAmount,
-                                    LiquidNetWorth = e.LiquidNetWorth
+                                   
                                 }
                         );
 
