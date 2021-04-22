@@ -5,23 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoneyManager.Data.Entities
+namespace MoneyManager.Models
 {
-    public class User
+    public class UserCreate
     {
-        [Key]
         public int UserAcctNumber { get; set; }
-
         [Required]
-        public Guid UserId { get; set; }
-        // [Required]
         public string Name { get; set; }
-       // [Required]
+        [Required]
         public string PhoneNumber { get; set; }
-       // [Required]
+        [Required]
         public string Address { get; set; }
         public double GoalAmount { get; set; }
-        
+        public double LiquidNetWorth { get; set; }
     }
 }
-

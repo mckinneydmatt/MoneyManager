@@ -54,11 +54,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checking\CheckingAcctCreate.cs" />
+    <Compile Include="Checking\CheckingAcctDetail.cs" />
+    <Compile Include="Checking\CheckingAcctEdit.cs" />
+    <Compile Include="Checking\CheckingAcctListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Savings\SavingsAcctCreate.cs" />
+    <Compile Include="Savings\SavingsAcctDetail.cs" />
+    <Compile Include="Savings\SavingsAcctEdit.cs" />
+    <Compile Include="Savings\SavingsAcctListItem.cs" />
+    <Compile Include="RetirementAcct\RetireCreate.cs" />
+    <Compile Include="RetirementAcct\RetirementAcctList.cs" />
+    <Compile Include="User\UserCreate.cs" />
+    <Compile Include="User\UserList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MoneyManager.Data\MoneyManager.Data.csproj">
+      <Project>{4725bbc8-ad52-48d9-a819-4051d2b480e2}</Project>
+      <Name>MoneyManager.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
