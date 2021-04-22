@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Models.RetirementAcct
 {
-    public class RetirementAcctList
+    public class RetireEdit
     {
         public decimal RtAcctBalance { get; set; }
 

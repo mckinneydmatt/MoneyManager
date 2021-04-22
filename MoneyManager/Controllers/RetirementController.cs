@@ -13,7 +13,7 @@ using System.Web.Http;
 
 namespace MoneyManager.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class RetirementController : ApiController
     {
 
@@ -37,10 +37,34 @@ namespace MoneyManager.Controllers
             return Ok();
         }
 
-        //public IHttpActionResult Get()
-        //{
-        //    RetirementService retirementService = CreateRetirement();
-        //    var retire = retirementService.
-        //}
+        public IHttpActionResult Get()
+        {
+            RetirementService retirementService = CreateRetirement();
+            var retire = retirementService.GetRetirementAcctLists();
+            return Ok(retire);
+        }
+
+        public IHttpActionResult Put(RetireEdit retireEdit)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateRetirement();
+
+            if (!service.EditRetirementAccount(retireEdit))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateRetirement();
+
+            if (!service.DeleteRetirementAcct(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }

@@ -1,9 +1,9 @@
-namespace MoneyManager.Data.Migrations
+﻿namespace MoneyManager.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class secondmigration : DbMigration
     {
         public override void Up()
         {
@@ -12,10 +12,11 @@ namespace MoneyManager.Data.Migrations
                 c => new
                     {
                         AccountId = c.Int(nullable: false, identity: true),
+                        UserID = c.Guid(nullable: false),
                         UserAcctNumber = c.Int(nullable: false),
-                        RtAcctNumber = c.String(nullable: false),
+                        RtAcctNumber = c.String(),
                         RtAcctBalance = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        AcctType = c.String(nullable: false),
+                        AcctType = c.String(),
                     })
                 .PrimaryKey(t => t.AccountId)
                 .ForeignKey("dbo.User", t => t.UserAcctNumber, cascadeDelete: true)
@@ -58,6 +59,17 @@ namespace MoneyManager.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.SavingsAcct",
+                c => new
+                    {
+                        AccountId = c.Int(nullable: false, identity: true),
+                        UserAccountNumber = c.Int(nullable: false),
+                        SvAcctName = c.String(),
+                        SvAcctBalance = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.AccountId);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -122,6 +134,7 @@ namespace MoneyManager.Data.Migrations
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
+            DropTable("dbo.SavingsAcct");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.User");

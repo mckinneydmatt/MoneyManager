@@ -9,12 +9,16 @@ namespace MoneyManager.Models.RetirementAcct
 {
     public class RetireCreate
     {
-        [Required]
+
         public decimal RtAcctBalance { get; set; }
-        
-        [Required]
+
+
         public string AcctType { get; set; }
         [Key]
         public int AccountId { get; set; }
+
+        public string RtAcctNumber { get; set; }
+
+        public int UserAcctNumber { get; set; }
     }
-}
+    }
