@@ -8,9 +8,12 @@ namespace MoneyManager.Models.RetirementAcct
 {
     public class RetirementAcctList
     {
+        public int UserAcctNumber { get; set; }
+       
+        public string RtAcctNumber { get; set; }
+
         public decimal RtAcctBalance { get; set; }
 
-    
         public string AcctType { get; set; }
     }
 }

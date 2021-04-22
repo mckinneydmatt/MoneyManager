@@ -9,6 +9,7 @@ namespace MoneyManager.Models
 {
     public class UserCreate
     {
+        public int UserAcctNumber { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

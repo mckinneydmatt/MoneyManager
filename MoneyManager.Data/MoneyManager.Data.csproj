@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -154,13 +153,33 @@
     <Compile Include="Entities\Expense.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104201904343_InitialCreate.cs" />
-    <Compile Include="Migrations\202104201904343_InitialCreate.Designer.cs">
-      <DependentUpon>202104201904343_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202104221243140_IntTesting.cs" />
+    <Compile Include="Migrations\202104221243140_IntTesting.Designer.cs">
+      <DependentUpon>202104221243140_IntTesting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104211444408_firstmigration.cs" />
-    <Compile Include="Migrations\202104211444408_firstmigration.Designer.cs">
-      <DependentUpon>202104211444408_firstmigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104221316578_IntTesting1.cs" />
+    <Compile Include="Migrations\202104221316578_IntTesting1.Designer.cs">
+      <DependentUpon>202104221316578_IntTesting1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221357478_IntTesting3.cs" />
+    <Compile Include="Migrations\202104221357478_IntTesting3.Designer.cs">
+      <DependentUpon>202104221357478_IntTesting3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221434569_FKTesting.cs" />
+    <Compile Include="Migrations\202104221434569_FKTesting.Designer.cs">
+      <DependentUpon>202104221434569_FKTesting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221446242_Testing.cs" />
+    <Compile Include="Migrations\202104221446242_Testing.Designer.cs">
+      <DependentUpon>202104221446242_Testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221502118_Testing1.cs" />
+    <Compile Include="Migrations\202104221502118_Testing1.Designer.cs">
+      <DependentUpon>202104221502118_Testing1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221502385_Testing2.cs" />
+    <Compile Include="Migrations\202104221502385_Testing2.Designer.cs">
+      <DependentUpon>202104221502385_Testing2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,20 +189,27 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104201904343_InitialCreate.resx">
-      <DependentUpon>202104201904343_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104221243140_IntTesting.resx">
+      <DependentUpon>202104221243140_IntTesting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104211444408_firstmigration.resx">
-      <DependentUpon>202104211444408_firstmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104221316578_IntTesting1.resx">
+      <DependentUpon>202104221316578_IntTesting1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221357478_IntTesting3.resx">
+      <DependentUpon>202104221357478_IntTesting3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221434569_FKTesting.resx">
+      <DependentUpon>202104221434569_FKTesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221446242_Testing.resx">
+      <DependentUpon>202104221446242_Testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221502118_Testing1.resx">
+      <DependentUpon>202104221502118_Testing1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221502385_Testing2.resx">
+      <DependentUpon>202104221502385_Testing2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

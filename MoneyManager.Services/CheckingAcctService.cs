@@ -1,7 +1,7 @@
 ﻿using MoneyManager.Data;
 using MoneyManager.Data.Entities;
 using MoneyManager.Models;
-using MoneyManager.Models.Savings;
+using MoneyManager.Models.Checking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,49 +10,49 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Services
 {
-    public class SavingsAcctService
+   public class CheckingAcctService
     {
-
         private readonly Guid _userId;
 
-        public SavingsAcctService(Guid userId)
+        public CheckingAcctService(Guid userId)
         {
             _userId = userId;
         }
 
-        public bool CreateSavingsAcct(SavingsAcctCreate model)
+        public bool CreateCheckingAcct(CheckingAcctCreate model)
         {
-            var entity = new SavingsAcct()
+            var entity = new CheckingAcct()
             {
                 AccountId = model.AccountId,
 
                 UserAcctNumber = model.UserAcctNumber,
 
-                SvAcctName = model.SvAcctName,
+                CkAcctName = model.CkAcctName,
 
-                SvAcctBalance = model.SvAcctBalance
+                CkAcctBalance = model.CkAcctBalance
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.SavingsAccts.Add(entity);
+                ctx.CheckingAccts.Add(entity);
                 return ctx.SaveChanges() == 1;
 
             }
 
         }
 
-        public IEnumerable<SavingsAcctListItem> GetSavingsAcct()
+        public IEnumerable<CheckingAcctListItem> GetCheckingAcct()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .SavingsAccts
+
+                        .CheckingAccts
                         .Where(e => e.AccountId == e.AccountId)
                         .Select(
                             e =>
-                                new SavingsAcctListItem
+                                new CheckingAcctListItem
                                 {
 
 
@@ -60,9 +60,9 @@ namespace MoneyManager.Services
 
                                     UserAcctNumber = e.UserAcctNumber,
 
-                                    SvAcctName = e.SvAcctName,
+                                    CkAcctName = e.CkAcctName,
 
-                                    SvAcctBalance = e.SvAcctBalance
+                                    CkAcctBalance = e.CkAcctBalance
 
                                 }
                         );
@@ -71,66 +71,66 @@ namespace MoneyManager.Services
             }
         }
 
-        public bool UpdateSavingsAcct(SavingsAcctEdit model)
+        public bool UpdateCheckingAcct(CheckingAcctEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                      
-                       .SavingsAccts
+
+                       .CheckingAccts
                         .Single(e => e.UserAcctNumber == model.UserAcctNumber);
 
-                                   // entity.AccountId = model.AccountId;
+                //entity.AccountId = model.AccountId;
 
-                                    entity.UserAcctNumber = model.UserAcctNumber;
+                entity.UserAcctNumber = model.UserAcctNumber;
 
-                                    entity.SvAcctName = model.SvAcctName;
+                entity.CkAcctName = model.CkAcctName;
 
-                                    entity.SvAcctBalance = model.SvAcctBalance;
+                entity.CkAcctBalance = model.CkAcctBalance;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public SavingsAcctDetail GetSavingsAcctByAcctNumber(int UserAcctNumber)
+        public CheckingAcctDetail GetCheckingAcctByAcctNumber(int UserAccountNumber)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        
-                        .SavingsAccts
+
+                        .CheckingAccts
                         .Single
-                        (e => e.UserAcctNumber == UserAcctNumber);
-                
+                        (e => e.UserAcctNumber == UserAccountNumber);
+
                 return
-                    new SavingsAcctDetail
-                    { 
+                    new CheckingAcctDetail
+                    {
                         AccountId = entity.AccountId,
 
                         UserAcctNumber = entity.UserAcctNumber,
 
-                        SvAcctName = entity.SvAcctName,
+                        CkAcctName = entity.CkAcctName,
 
-                        SvAcctBalance = entity.SvAcctBalance
+                        CkAcctBalance = entity.CkAcctBalance
 
 
                     };
             }
         }
 
-        public bool DeleteSavingsAcct(int UserAcctNumber)
+        public bool DeleteCheckingAcct(int UserAcctNumber)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        
-                        .SavingsAccts
+
+                        .CheckingAccts
                         .Single(e => e.UserAcctNumber == UserAcctNumber);
 
-                ctx.SavingsAccts.Remove(entity);
+                ctx.CheckingAccts.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

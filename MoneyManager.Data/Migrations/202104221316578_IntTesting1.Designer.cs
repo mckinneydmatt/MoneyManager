@@ -6,14 +6,14 @@ namespace MoneyManager.Data.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    public sealed partial class IntTesting1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(IntTesting1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104201904343_InitialCreate"; }
+            get { return "202104221316578_IntTesting1"; }
         }
         
         string IMigrationMetadata.Source

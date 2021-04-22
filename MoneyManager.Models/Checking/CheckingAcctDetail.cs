@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Models
 {
-   public class SavingsAcctEdit
+    public class CheckingAcctDetail
     {
         public int AccountId { get; set; }
 
         public int UserAcctNumber { get; set; }
 
-        public string SvAcctName { get; set; }
+        public string CkAcctName { get; set; }
 
-        public decimal SvAcctBalance { get; set; }
+        public decimal CkAcctBalance { get; set; }
     }
 }

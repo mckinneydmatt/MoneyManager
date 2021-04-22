@@ -10,7 +10,7 @@ namespace MoneyManager.Models.Savings
     {
         public int AccountId { get; set; }
 
-        public int UserAccountNumber { get; set; }
+        public int UserAcctNumber { get; set; }
 
         public string SvAcctName { get; set; }
 
