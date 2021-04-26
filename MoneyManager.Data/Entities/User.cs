@@ -11,15 +11,17 @@ namespace MoneyManager.Data.Entities
     {
         [Key]
         public int UserAcctNumber { get; set; }
+
         [Required]
-        public Guid UserID { get; set; }
-        [Required]
+        public Guid UserId { get; set; }
+        // [Required]
         public string Name { get; set; }
-        [Required]
+       // [Required]
         public string PhoneNumber { get; set; }
-        [Required]
+       // [Required]
         public string Address { get; set; }
         public double GoalAmount { get; set; }
         
     }
 }
+

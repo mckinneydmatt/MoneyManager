@@ -13,19 +13,19 @@ namespace MoneyManager.Data.Entities
         [Key]
         public int AccountId { get; set; }
 
-        [Required]
         [ForeignKey(nameof(User))]
         public int UserAcctNumber { get; set; }
 
         public virtual User User { get; set; }
 
-        [Required]
+       // [Required]
         public string RtAcctNumber { get; set; }
 
-        [Required]
-        public double RtAcctBalance { get; set; }
 
-        [Required]
+       //[Required]
+        public decimal RtAcctBalance { get; set; }
+
+       // [Required]
         public string AcctType { get; set; }
 
     }
