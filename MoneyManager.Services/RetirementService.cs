@@ -3,11 +3,9 @@ using MoneyManager.Data.Entities;
 using MoneyManager.Models.RetirementAcct;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace MoneyManager.Services
 {
     public class RetirementService
@@ -17,31 +15,25 @@ namespace MoneyManager.Services
         {
             _userId = userId;
         }
-
         public bool CreateRetirement(RetireCreate model)
         {
             var entity =
                 new RetirementAcct()
                 {
-                    
+                    //UserID = _userId,
                     AccountId = model.AccountId,
-                    UserAcctNumber = model.UserAcctNumber,
                     AcctType = model.AcctType,
-                    RtAcctBalance = model.RtAcctBalance
-
+                    RtAcctBalance = model.RtAcctBalance,
+                    RtAcctNumber = model.RtAcctNumber,
+                    UserAcctNumber = model.UserAcctNumber
                 };
             using (var ctx = new ApplicationDbContext())
             {
-
-                {
-                    ctx.RetirementAccts.Add(entity);
-                    return ctx.SaveChanges() == 1;
-                }
-            } 
+                ctx.RetirementAccts.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
-
-
-        public IEnumerable<RetirementAcctList> GetRetirementAcct()
+        public IEnumerable<RetirementAcctList> GetRetirementAcctLists()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,19 +42,39 @@ namespace MoneyManager.Services
                     .RetirementAccts
                     .Where(e => e.AccountId == e.AccountId)
                     .Select(
-                        e => new RetirementAcctList
+                        e =>
+                        new RetirementAcctList
                         {
-                            UserAcctNumber = e.UserAcctNumber,
-                            RtAcctNumber = e.RtAcctNumber,
-                            AcctType = e.AcctType,
                             RtAcctBalance = e.RtAcctBalance,
-
+                            AcctType = e.AcctType,
+                            RtAcctNumber = e.RtAcctNumber,
+                            UserAcctNumber = e.UserAcctNumber
                         }
                         );
                 return query.ToArray();
             }
         }
-
-
+        public bool EditRetirementAccount(RetireEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .RetirementAccts
+                    .Single(e => e.AccountId == model.AccountId);
+                entity.AccountId = model.AccountId;
+                entity.RtAcctBalance = model.RtAcctBalance;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteRetirementAcct(int userAccountNumber)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.RetirementAccts.Single(e => e.AccountId == userAccountNumber);
+                ctx.RetirementAccts.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
