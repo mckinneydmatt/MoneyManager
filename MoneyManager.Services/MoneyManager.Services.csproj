@@ -69,10 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExpenseService.cs" />
+    <Compile Include="CkExpenseService.cs" />
+    <Compile Include="RetExpenseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CheckingAcctService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavExpenseService.cs" />
     <Compile Include="SavingsAcctService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="RetirementService.cs" />

@@ -41,7 +41,9 @@ namespace MoneyManager.Data
        public DbSet<CheckingAcct> CheckingAccts { get; set; } //<--- Add this
         public DbSet<SavingsAcct> SavingsAccts { get; set; } //<--- Add this
         public DbSet<RetirementAcct> RetirementAccts { get; set; } //<--- Add this
-        public DbSet<Expense> Expenses { get; set; } //<--- Add this
+        public DbSet<RetExpense> RetExpenses { get; set; } //<--- Add this
+        public DbSet<SavExpense> SavExpenses { get; set; } //<--- Add this
+        public DbSet<CkExpense> CkExpenses { get; set; } //<--- Add this
 
 
 

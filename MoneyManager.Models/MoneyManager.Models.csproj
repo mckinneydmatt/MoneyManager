@@ -54,7 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expense\ExpenseCreate.cs" />
+    <Compile Include="CkExpense\CkExpenseCreate.cs" />
+    <Compile Include="CkExpense\CkExpenseDetail.cs" />
+    <Compile Include="CkExpense\CkExpenseEdit.cs" />
+    <Compile Include="CkExpense\CkExpenseListItem.cs" />
+    <Compile Include="RetExpense\RetExpenseCreate.cs" />
+    <Compile Include="RetExpense\RetExpenseDetail.cs" />
+    <Compile Include="RetExpense\RetExpenseEdit.cs" />
+    <Compile Include="RetExpense\RetExpenseListItem.cs" />
+    <Compile Include="SavExpense\SavExpenseCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetirementAcct\RetireCreate.cs" />
     <Compile Include="Checking\CheckingAcctCreate.cs" />
@@ -63,6 +71,9 @@
     <Compile Include="Checking\CheckingAcctListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetirementAcct\RetireEdit.cs" />
+    <Compile Include="SavExpense\SavExpenseDetail.cs" />
+    <Compile Include="SavExpense\SavExpenseEdit.cs" />
+    <Compile Include="SavExpense\SavExpenseListItem.cs" />
     <Compile Include="Savings\SavingsAcctCreate.cs" />
     <Compile Include="Savings\SavingsAcctDetail.cs" />
     <Compile Include="Savings\SavingsAcctEdit.cs" />
