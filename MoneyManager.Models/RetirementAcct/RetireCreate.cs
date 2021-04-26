@@ -6,18 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoneyManager.Data.Entities
+namespace MoneyManager.Models.RetirementAcct
 {
-    public class RetirementAcct
+    public class RetireCreate
     {
         [Key]
         public int AccountId { get; set; }
-
-        [Required]
-        [ForeignKey(nameof(User))]
-        public int UserAcctNumber { get; set; }
-
-        public virtual User User { get; set; }
 
         [Required]
         public string RtAcctNumber { get; set; }
@@ -27,6 +21,7 @@ namespace MoneyManager.Data.Entities
 
         [Required]
         public string AcctType { get; set; }
+        public int UserAcctNumber { get; set; }
 
     }
 }

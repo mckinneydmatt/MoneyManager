@@ -29,7 +29,6 @@ namespace MoneyManager.Services
                     PhoneNumber = model.PhoneNumber,
                     Address = model.Address,
                     GoalAmount = model.GoalAmount,
-                    LiquidNetWorth = model.LiquidNetWorth,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -55,7 +54,6 @@ namespace MoneyManager.Services
                                     PhoneNumber = e.PhoneNumber,
                                     Address = e.Address,
                                     GoalAmount = e.GoalAmount,
-                                    LiquidNetWorth = e.LiquidNetWorth
                                 }
                         );
 
@@ -78,7 +76,6 @@ namespace MoneyManager.Services
                         PhoneNumber = entity.PhoneNumber,
                         Address = entity.Address,
                         GoalAmount = entity.GoalAmount,
-                        LiquidNetWorth = entity.LiquidNetWorth
                     };
             }
         }
@@ -115,7 +112,6 @@ namespace MoneyManager.Services
                         PhoneNumber = entity.PhoneNumber,
                         Address = entity.Address,
                         GoalAmount = entity.GoalAmount,
-                        LiquidNetWorth = entity.LiquidNetWorth
                     };
             }
         }

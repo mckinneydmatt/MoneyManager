@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Data.Entities
 {
-    public class User
+    public class User 
     {
         [Key]
         public int UserAcctNumber { get; set; }
@@ -20,6 +20,6 @@ namespace MoneyManager.Data.Entities
         [Required]
         public string Address { get; set; }
         public double GoalAmount { get; set; }
-        public double LiquidNetWorth { get; set; }
+        
     }
 }

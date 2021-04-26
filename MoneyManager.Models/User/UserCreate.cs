@@ -16,6 +16,5 @@ namespace MoneyManager.Models
         [Required]
         public string Address { get; set; }
         public double GoalAmount { get; set; }
-        public double LiquidNetWorth { get; set; }
     }
 }
