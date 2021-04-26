@@ -13,6 +13,5 @@ namespace MoneyManager.Models.User
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public double GoalAmount { get; set; }
-        public double LiquidNetWorth { get; set; }
     }
 }
