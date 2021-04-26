@@ -10,7 +10,9 @@ namespace MoneyManager.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+
             ContextKey = "MoneyManager.Data.ApplicationDbContext";
+
         }
 
         protected override void Seed(MoneyManager.Data.ApplicationDbContext context)

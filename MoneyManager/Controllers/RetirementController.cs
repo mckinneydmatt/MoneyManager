@@ -1,3 +1,4 @@
+
 ﻿using Microsoft.AspNet.Identity;
 using MoneyManager.Data.Entities;
 using MoneyManager.Models;
@@ -8,11 +9,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace MoneyManager.Controllers
 {
+
     [Authorize]
     public class RetirementController : ApiController
     {
@@ -28,6 +31,7 @@ namespace MoneyManager.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
 
             var service = CreateRetirement();
 
