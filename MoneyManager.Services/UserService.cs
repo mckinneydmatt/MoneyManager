@@ -70,7 +70,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == acctNum && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == acctNum && e.UserId == _userId);
                 return
                     new UserDetail
                     {
@@ -89,7 +89,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == model.UserAcctNumber && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == model.UserAcctNumber && e.UserId == _userId);
 
                 entity.Name = model.Name;
                 entity.PhoneNumber = model.PhoneNumber;
@@ -106,7 +106,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.Name == name && e.UserID == _userId);
+                        .Single(e => e.Name == name && e.UserId == _userId);
                 return
                     new UserDetail
                     {
@@ -125,7 +125,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == acctNum && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == acctNum && e.UserId == _userId);
 
                 ctx.Users.Remove(entity);
 

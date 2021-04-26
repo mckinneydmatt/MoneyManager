@@ -156,6 +156,7 @@
     <Compile Include="Migrations\202104261454204_reset.cs" />
     <Compile Include="Migrations\202104261454204_reset.Designer.cs">
       <DependentUpon>202104261454204_reset.cs</DependentUpon>
+		</Compile>
     <Compile Include="Migrations\202104221243140_IntTesting.cs" />
     <Compile Include="Migrations\202104221243140_IntTesting.Designer.cs">
       <DependentUpon>202104221243140_IntTesting.cs</DependentUpon>
@@ -194,7 +195,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104261454204_reset.resx">
       <DependentUpon>202104261454204_reset.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\202104221243140_IntTesting.resx">
+	</EmbeddedResource>
+	<EmbeddedResource Include="Migrations\202104221243140_IntTesting.resx">
       <DependentUpon>202104221243140_IntTesting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104221316578_IntTesting1.resx">
