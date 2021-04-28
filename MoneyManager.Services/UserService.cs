@@ -24,12 +24,13 @@ namespace MoneyManager.Services
             var entity =
                 new User()
                 {
-                    UserID = _userId,
+                    UserId = _userId,
+                    UserAcctNumber = model.UserAcctNumber,
                     Name = model.Name,
                     PhoneNumber = model.PhoneNumber,
                     Address = model.Address,
                     GoalAmount = model.GoalAmount,
-                    LiquidNetWorth = model.LiquidNetWorth,
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -45,7 +46,7 @@ namespace MoneyManager.Services
                 var query =
                     ctx
                         .Users
-                        .Where(e => e.UserID == _userId)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new UserList
@@ -55,7 +56,7 @@ namespace MoneyManager.Services
                                     PhoneNumber = e.PhoneNumber,
                                     Address = e.Address,
                                     GoalAmount = e.GoalAmount,
-                                    LiquidNetWorth = e.LiquidNetWorth
+
                                 }
                         );
 
@@ -69,7 +70,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == acctNum && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == acctNum && e.UserId == _userId);
                 return
                     new UserDetail
                     {
@@ -78,7 +79,6 @@ namespace MoneyManager.Services
                         PhoneNumber = entity.PhoneNumber,
                         Address = entity.Address,
                         GoalAmount = entity.GoalAmount,
-                        LiquidNetWorth = entity.LiquidNetWorth
                     };
             }
         }
@@ -89,7 +89,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == model.UserAcctNumber && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == model.UserAcctNumber && e.UserId == _userId);
 
                 entity.Name = model.Name;
                 entity.PhoneNumber = model.PhoneNumber;
@@ -106,7 +106,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.Name == name && e.UserID == _userId);
+                        .Single(e => e.Name == name && e.UserId == _userId);
                 return
                     new UserDetail
                     {
@@ -115,7 +115,6 @@ namespace MoneyManager.Services
                         PhoneNumber = entity.PhoneNumber,
                         Address = entity.Address,
                         GoalAmount = entity.GoalAmount,
-                        LiquidNetWorth = entity.LiquidNetWorth
                     };
             }
         }
@@ -126,7 +125,7 @@ namespace MoneyManager.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.UserAcctNumber == acctNum && e.UserID == _userId);
+                        .Single(e => e.UserAcctNumber == acctNum && e.UserId == _userId);
 
                 ctx.Users.Remove(entity);
 

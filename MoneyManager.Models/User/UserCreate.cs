@@ -9,6 +9,7 @@ namespace MoneyManager.Models
 {
     public class UserCreate
     {
+        public int UserAcctNumber { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -16,6 +17,5 @@ namespace MoneyManager.Models
         [Required]
         public string Address { get; set; }
         public double GoalAmount { get; set; }
-        public double LiquidNetWorth { get; set; }
     }
 }
