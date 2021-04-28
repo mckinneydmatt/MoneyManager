@@ -21,7 +21,6 @@ namespace MoneyManager.Models.Expense
         [Required]
         public string RetExpenseName { get; set; }
 
-        [Required]
         public DateTime RetDueDate { get; set; }
     }
 

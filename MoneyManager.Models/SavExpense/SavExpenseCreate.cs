@@ -21,7 +21,6 @@ namespace MoneyManager.Models.Expense
         [Required]
         public string SavExpenseName { get; set; }
 
-        [Required]
         public DateTime SavDueDate { get; set; }
     }
 

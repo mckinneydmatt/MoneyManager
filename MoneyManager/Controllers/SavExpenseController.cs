@@ -18,6 +18,12 @@ namespace MoneyManager.Controllers
             var savExpenseService = new SavExpenseService(/*userId*/);
             return savExpenseService;
         }
+        public IHttpActionResult Get()
+        {
+            SavExpenseService savExpenseService = CreateSavExpenseService();
+            var savExpenses = savExpenseService.GetSavExpenses();
+            return Ok(savExpenses);
+        }
 
         public IHttpActionResult Post(SavExpenseCreate savExpense)
         {

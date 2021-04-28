@@ -21,7 +21,6 @@ namespace MoneyManager.Models.CkExpense
         [Required]
         public string CkExpenseName { get; set; }
 
-        [Required]
         public DateTime CkDueDate { get; set; }
     }
 
