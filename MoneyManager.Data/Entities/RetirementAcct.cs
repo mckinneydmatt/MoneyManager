@@ -21,6 +21,7 @@ namespace MoneyManager.Data.Entities
        // [Required]
         public string RtAcctNumber { get; set; }
 
+
        //[Required]
         public decimal RtAcctBalance { get; set; }
 
