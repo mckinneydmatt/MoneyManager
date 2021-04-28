@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Models.Expense
 {
-    public class ExpenseCreate
+    public class SavExpenseCreate
     {
-       
+
         [Key]
-        public int ExpenseId { get; set; }
+        public int SavExpenseId { get; set; }
 
         public int AccountId { get; set; }
 
         [Required]
-        public decimal ExpenseAmount { get; set; }
+        public decimal SavExpenseAmount { get; set; }
 
         [Required]
-        public string ExpenseName { get; set; }
+        public string SavExpenseName { get; set; }
 
-        [Required]
-        public DateTime DueDate { get; set; }
+        public DateTime SavDueDate { get; set; }
     }
 
 }
