@@ -13,15 +13,33 @@ namespace MoneyManager.Data.Entities
         public int UserAcctNumber { get; set; }
 
         [Required]
+
         public Guid UserId { get; set; }
         // [Required]
         public string Name { get; set; }
        // [Required]
         public string PhoneNumber { get; set; }
        // [Required]
+=
+        public Guid UserID { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+
         public string Address { get; set; }
+
         public double GoalAmount { get; set; }
+
         
+
+
+        public double LiquidNetWorth { get; set; }
+
     }
 }
 

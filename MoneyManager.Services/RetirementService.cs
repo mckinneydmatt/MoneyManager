@@ -26,6 +26,11 @@ namespace MoneyManager.Services
                     RtAcctBalance = model.RtAcctBalance,
                     RtAcctNumber = model.RtAcctNumber,
                     UserAcctNumber = model.UserAcctNumber
+
+
+
+
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -33,6 +38,9 @@ namespace MoneyManager.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
+
         public IEnumerable<RetirementAcctList> GetRetirementAcctLists()
         {
             using (var ctx = new ApplicationDbContext())
@@ -47,6 +55,10 @@ namespace MoneyManager.Services
                         {
                             RtAcctBalance = e.RtAcctBalance,
                             AcctType = e.AcctType,
+
+
+                            AccountId = e.AccountId,
+
                             RtAcctNumber = e.RtAcctNumber,
                             UserAcctNumber = e.UserAcctNumber
                         }
@@ -54,6 +66,10 @@ namespace MoneyManager.Services
                 return query.ToArray();
             }
         }
+
+
+
+
         public bool EditRetirementAccount(RetireEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -64,14 +80,27 @@ namespace MoneyManager.Services
                     .Single(e => e.AccountId == model.AccountId);
                 entity.AccountId = model.AccountId;
                 entity.RtAcctBalance = model.RtAcctBalance;
+
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
         public bool DeleteRetirementAcct(int userAccountNumber)
         {
             using (var ctx = new ApplicationDbContext())
             {
+
                 var entity = ctx.RetirementAccts.Single(e => e.AccountId == userAccountNumber);
+
+                var entity = ctx.RetirementAccts.Single(e => e.AccountId == userAccountNumber );
+
+
                 ctx.RetirementAccts.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
