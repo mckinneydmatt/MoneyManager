@@ -149,14 +149,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CheckingAcct.cs" />
+    <Compile Include="Entities\CkExpense.cs" />
+    <Compile Include="Entities\SavExpense.cs" />
     <Compile Include="Entities\SavingsAcct.cs" />
     <Compile Include="Entities\RetirementAcct.cs" />
-    <Compile Include="Entities\Expense.cs" />
+    <Compile Include="Entities\RetExpense.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IdentityModels.cs" />
+
+    <Compile Include="Migrations\202104271511352_first migrationMM.cs" />
+    <Compile Include="Migrations\202104271511352_first migrationMM.designer.cs">
+      <DependentUpon>202104271511352_first migrationMM.cs</DependentUpon>
+
     <Compile Include="Migrations\202104221325170_secondmigration.cs" />
     <Compile Include="Migrations\202104221325170_secondmigration.designer.cs">
       <DependentUpon>202104221325170_secondmigration.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,8 +174,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\202104271511352_first migrationMM.resx">
+      <DependentUpon>202104271511352_first migrationMM.cs</DependentUpon>
+
     <EmbeddedResource Include="Migrations\202104221325170_secondmigration.resx">
       <DependentUpon>202104221325170_secondmigration.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

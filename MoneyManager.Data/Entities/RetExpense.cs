@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace MoneyManager.Data.Entities
 {
-    public class Expense
+    public class RetExpense
     {
         [Key]
-        public int ExpenseId { get; set; }
+        public int RetExpenseId { get; set; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(RetirementAcct))]
         public int AccountId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual RetirementAcct RetirementAcct { get; set; }
 
         [Required]
-        public decimal ExpenseAmmount { get; set; }
+        public decimal RetExpenseAmount { get; set; }
 
         [Required]
-        public string ExpenseName { get; set; }
+        public string RetExpenseName { get; set; }
 
-        [Required]
-        public DateTime DueDate { get; set; }
+        
+        public DateTime RetDueDate { get; set; }
     }
 }
